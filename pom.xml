@@ -168,7 +168,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommender-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-recommender-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
