@@ -22,13 +22,14 @@ gapic = gcp.GAPICGenerator()
 
 service = 'recommender'
 versions = ['v1beta1']
-config_pattern = '/google/cloud/{service}/artman_{service}_{version}.yaml'
+config_pattern = '/google/cloud/{service}/{version}/artman_{service}_{version}.yaml'
 
 for version in versions:
     library = java.gapic_library(
         service=service,
         version=version,
-        config_pattern=config_pattern
+        config_pattern=config_pattern,
+        gapic=gapic,
     )
 
 common_templates = gcp.CommonTemplates()
