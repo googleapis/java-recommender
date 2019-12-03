@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/googleapis/java-recommender/compare/v0.1.2...v0.1.3) (2019-12-03)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.0 ([#37](https://www.github.com/googleapis/java-recommender/issues/37)) ([89602b1](https://www.github.com/googleapis/java-recommender/commit/89602b12b32ee212ed1a41e159f27091120a4932))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#40](https://www.github.com/googleapis/java-recommender/issues/40)) ([7e04234](https://www.github.com/googleapis/java-recommender/commit/7e0423470f6a2709bbd432bb3f94ac2cff922045))
+
 ### [0.1.2](https://www.github.com/googleapis/java-recommender/compare/v0.1.1...v0.1.2) (2019-11-08)
 
 
