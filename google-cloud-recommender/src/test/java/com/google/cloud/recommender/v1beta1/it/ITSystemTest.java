@@ -15,11 +15,11 @@
  */
 package com.google.cloud.recommender.v1beta1.it;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
@@ -30,6 +30,7 @@ import com.google.cloud.recommender.v1beta1.RecommendationName;
 import com.google.cloud.recommender.v1beta1.RecommenderClient;
 import com.google.cloud.recommender.v1beta1.RecommenderName;
 import com.google.common.collect.Lists;
+import io.grpc.StatusRuntimeException;
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
@@ -47,6 +48,7 @@ public class ITSystemTest {
   private static final String ETAG = "invalid-etag";
   private static final String FORMATTED_RECOMMENDATION_NAME =
       RecommendationName.of(LOCATION, PROJECT, RECOMMENDER, RECOMMENDATION).toString();
+  private static final String RESOURCE_MAY_NOT_EXISTS = "resource may not exist";
 
   @Before
   public void setUp() throws Exception {
@@ -79,30 +81,45 @@ public class ITSystemTest {
     client.listRecommendations(request);
   }
 
-  @Test(expected = PermissionDeniedException.class)
+  @Test
   public void getRecommendationExceptionTest() {
     GetRecommendationRequest request =
         GetRecommendationRequest.newBuilder().setName(FORMATTED_RECOMMENDATION_NAME).build();
-    client.getRecommendation(request);
+    try {
+      client.getRecommendation(request);
+    } catch (Exception e) {
+      assertEquals(StatusRuntimeException.class, e.getCause().getClass());
+      assertTrue(e.getCause().getMessage().contains(RESOURCE_MAY_NOT_EXISTS));
+    }
   }
 
-  @Test(expected = PermissionDeniedException.class)
+  @Test
   public void markRecommendationClaimedExceptionTest() {
     MarkRecommendationClaimedRequest request =
         MarkRecommendationClaimedRequest.newBuilder()
             .setName(FORMATTED_RECOMMENDATION_NAME)
             .setEtag(ETAG)
             .build();
-    client.markRecommendationClaimed(request);
+    try {
+      client.markRecommendationClaimed(request);
+    } catch (Exception e) {
+      assertEquals(StatusRuntimeException.class, e.getCause().getClass());
+      assertTrue(e.getCause().getMessage().contains(RESOURCE_MAY_NOT_EXISTS));
+    }
   }
 
-  @Test(expected = PermissionDeniedException.class)
+  @Test
   public void markRecommendationSucceededExceptionTest() {
     MarkRecommendationSucceededRequest request =
         MarkRecommendationSucceededRequest.newBuilder()
             .setName(FORMATTED_RECOMMENDATION_NAME)
             .setEtag(ETAG)
             .build();
-    client.markRecommendationSucceeded(request);
+    try {
+      client.markRecommendationSucceeded(request);
+    } catch (Exception e) {
+      assertEquals(StatusRuntimeException.class, e.getCause().getClass());
+      assertTrue(e.getCause().getMessage().contains(RESOURCE_MAY_NOT_EXISTS));
+    }
   }
 }
