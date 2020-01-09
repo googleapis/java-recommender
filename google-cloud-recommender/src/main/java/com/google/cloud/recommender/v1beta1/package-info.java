@@ -31,8 +31,8 @@
  * <pre>
  * <code>
  * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
- *   String formattedName = RecommenderClient.formatRecommendationName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
- *   Recommendation response = recommenderClient.getRecommendation(formattedName);
+ *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+ *   Recommendation response = recommenderClient.getRecommendation(name);
  * }
  * </code>
  * </pre>

@@ -25,6 +25,7 @@ package com.google.cloud.examples.recommender.v1beta1;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.Recommendation;
 import com.google.cloud.recommender.v1beta1.RecommenderClient;
+import com.google.cloud.recommender.v1beta1.RecommenderName;
 
 public class SampleListRecommendations {
   // [START ]
@@ -34,15 +35,15 @@ public class SampleListRecommendations {
    * import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
    * import com.google.cloud.recommender.v1beta1.Recommendation;
    * import com.google.cloud.recommender.v1beta1.RecommenderClient;
+   * import com.google.cloud.recommender.v1beta1.RecommenderName;
    */
 
   /** List recommendations for a specified project, location, and recommender. */
   public static void sampleListRecommendations() {
     try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-      String formattedParent =
-          RecommenderClient.formatRecommenderName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
       ListRecommendationsRequest request =
-          ListRecommendationsRequest.newBuilder().setParent(formattedParent).build();
+          ListRecommendationsRequest.newBuilder().setParent(parent.toString()).build();
       for (Recommendation responseItem :
           recommenderClient.listRecommendations(request).iterateAll()) {
         Recommendation recommendation = responseItem;

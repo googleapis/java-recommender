@@ -28,8 +28,6 @@ public interface RecommendationOrBuilder
    *
    * <pre>
    * Name of recommendation.
-   * A project recommendation is represented as
-   *   projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,8 +40,6 @@ public interface RecommendationOrBuilder
    *
    * <pre>
    * Name of recommendation.
-   * A project recommendation is represented as
-   *   projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
