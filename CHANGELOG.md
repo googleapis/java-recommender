@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/googleapis/java-recommender/compare/v0.2.1...v0.2.2) (2020-01-14)
+
+
+### Dependencies
+
+* update core dependencies ([#73](https://www.github.com/googleapis/java-recommender/issues/73)) ([17a8bba](https://www.github.com/googleapis/java-recommender/commit/17a8bba32a55ecc20489ff46e7e3eea35a827489))
+* update dependency org.threeten:threetenbp to v1.4.1 ([#75](https://www.github.com/googleapis/java-recommender/issues/75)) ([d5af459](https://www.github.com/googleapis/java-recommender/commit/d5af459e6a01ed3ff3ea01daf2965c87a413c2ea))
+
 ### [0.2.1](https://www.github.com/googleapis/java-recommender/compare/v0.2.0...v0.2.1) (2020-01-07)
 
 
