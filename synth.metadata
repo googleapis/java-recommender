@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-21T23:43:17.099180Z",
+  "updateTime": "2020-01-22T21:03:55.017672Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "cda99c1f7dc5e4ca9b1caeae1dc330838cbc1461",
-        "internalRef": "290800639"
+        "sha": "fead959b0dcc7b36c6ed74ebf905f5bcb3c0d521",
+        "log": "fead959b0dcc7b36c6ed74ebf905f5bcb3c0d521\nMerge branch 'master' of github.com:googleapis/googleapis\n\n8d16f76de065f530d395a4c7eabbf766d6a120fd\nGenerate Memcache v1beta2 API protos and gRPC ServiceConfig files\n\nPiperOrigin-RevId: 291008516\n\n3af1dabd93df9a9f17bf3624d3b875c11235360b\ngrafeas: Add containeranalysis default_host to Grafeas service\n\nPiperOrigin-RevId: 290965849\n\nbe2663fa95e31cba67d0cd62611a6674db9f74b7\nfix(google/maps/roads): add missing opening bracket\n\nPiperOrigin-RevId: 290964086\n\nfacc26550a0af0696e0534bc9cae9df14275aa7c\nUpdating v2 protos with the latest inline documentation (in comments) and adding a per-service .yaml file.\n\nPiperOrigin-RevId: 290952261\n\n79098bc63f6a0062e435c0252716a01f07efb13e\nMerge branch 'master' of github.com:googleapis/googleapis\n\nc26bd1db01f39ed3d4bab99ecd0919aed4d604e4\nMerge branch 'master' of github.com:googleapis/googleapis\n\n8aa685438def7696727a4ede41f54ec3856963b0\nMerge branch 'master' of github.com:googleapis/googleapis\n\n7eb9efd7e60d7abe621438a377275b7019f0bcb3\nMerge branch 'master' of github.com:googleapis/googleapis\n\n28fe75fd0e78ad022366202871b5e79b1914eaf7\nMerge branch 'master' of github.com:googleapis/googleapis\n\ne1b49ef6d189d72d7fcde6d2ce4e0966916a79d1\nadd securitycenter gapic client bazel targets\n\n"
       }
     },
     {
