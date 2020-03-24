@@ -33,7 +33,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler",
+    value = "by gRPC proto compiler (version 1.10.0)",
     comments = "Source: google/cloud/recommender/v1/recommender_service.proto")
 public final class RecommenderGrpc {
 
@@ -42,20 +42,30 @@ public final class RecommenderGrpc {
   public static final String SERVICE_NAME = "google.cloud.recommender.v1.Recommender";
 
   // Static method descriptors that strictly reflect the proto.
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListRecommendationsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.ListRecommendationsRequest,
+          com.google.cloud.recommender.v1.ListRecommendationsResponse>
+      METHOD_LIST_RECOMMENDATIONS = getListRecommendationsMethodHelper();
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.ListRecommendationsRequest,
           com.google.cloud.recommender.v1.ListRecommendationsResponse>
       getListRecommendationsMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListRecommendations",
-      requestType = com.google.cloud.recommender.v1.ListRecommendationsRequest.class,
-      responseType = com.google.cloud.recommender.v1.ListRecommendationsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.ListRecommendationsRequest,
           com.google.cloud.recommender.v1.ListRecommendationsResponse>
       getListRecommendationsMethod() {
+    return getListRecommendationsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.ListRecommendationsRequest,
+          com.google.cloud.recommender.v1.ListRecommendationsResponse>
+      getListRecommendationsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.recommender.v1.ListRecommendationsRequest,
             com.google.cloud.recommender.v1.ListRecommendationsResponse>
@@ -71,7 +81,8 @@ public final class RecommenderGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "ListRecommendations"))
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1.Recommender", "ListRecommendations"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -90,20 +101,30 @@ public final class RecommenderGrpc {
     return getListRecommendationsMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetRecommendationMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetRecommendationRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      METHOD_GET_RECOMMENDATION = getGetRecommendationMethodHelper();
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.GetRecommendationRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getGetRecommendationMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetRecommendation",
-      requestType = com.google.cloud.recommender.v1.GetRecommendationRequest.class,
-      responseType = com.google.cloud.recommender.v1.Recommendation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.GetRecommendationRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getGetRecommendationMethod() {
+    return getGetRecommendationMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetRecommendationRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      getGetRecommendationMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.recommender.v1.GetRecommendationRequest,
             com.google.cloud.recommender.v1.Recommendation>
@@ -118,7 +139,9 @@ public final class RecommenderGrpc {
                           com.google.cloud.recommender.v1.Recommendation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRecommendation"))
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1.Recommender", "GetRecommendation"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -136,20 +159,30 @@ public final class RecommenderGrpc {
     return getGetRecommendationMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getMarkRecommendationClaimedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      METHOD_MARK_RECOMMENDATION_CLAIMED = getMarkRecommendationClaimedMethodHelper();
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getMarkRecommendationClaimedMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MarkRecommendationClaimed",
-      requestType = com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest.class,
-      responseType = com.google.cloud.recommender.v1.Recommendation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getMarkRecommendationClaimedMethod() {
+    return getMarkRecommendationClaimedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      getMarkRecommendationClaimedMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest,
             com.google.cloud.recommender.v1.Recommendation>
@@ -168,7 +201,9 @@ public final class RecommenderGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "MarkRecommendationClaimed"))
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1.Recommender",
+                              "MarkRecommendationClaimed"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -186,20 +221,30 @@ public final class RecommenderGrpc {
     return getMarkRecommendationClaimedMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getMarkRecommendationSucceededMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      METHOD_MARK_RECOMMENDATION_SUCCEEDED = getMarkRecommendationSucceededMethodHelper();
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getMarkRecommendationSucceededMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MarkRecommendationSucceeded",
-      requestType = com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest.class,
-      responseType = com.google.cloud.recommender.v1.Recommendation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getMarkRecommendationSucceededMethod() {
+    return getMarkRecommendationSucceededMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      getMarkRecommendationSucceededMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest,
             com.google.cloud.recommender.v1.Recommendation>
@@ -219,7 +264,9 @@ public final class RecommenderGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "MarkRecommendationSucceeded"))
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1.Recommender",
+                              "MarkRecommendationSucceeded"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -237,20 +284,30 @@ public final class RecommenderGrpc {
     return getMarkRecommendationSucceededMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getMarkRecommendationFailedMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      METHOD_MARK_RECOMMENDATION_FAILED = getMarkRecommendationFailedMethodHelper();
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getMarkRecommendationFailedMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MarkRecommendationFailed",
-      requestType = com.google.cloud.recommender.v1.MarkRecommendationFailedRequest.class,
-      responseType = com.google.cloud.recommender.v1.Recommendation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
           com.google.cloud.recommender.v1.Recommendation>
       getMarkRecommendationFailedMethod() {
+    return getMarkRecommendationFailedMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      getMarkRecommendationFailedMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
             com.google.cloud.recommender.v1.Recommendation>
@@ -268,7 +325,9 @@ public final class RecommenderGrpc {
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "MarkRecommendationFailed"))
+                          generateFullMethodName(
+                              "google.cloud.recommender.v1.Recommender",
+                              "MarkRecommendationFailed"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -288,42 +347,19 @@ public final class RecommenderGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static RecommenderStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<RecommenderStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<RecommenderStub>() {
-          @java.lang.Override
-          public RecommenderStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new RecommenderStub(channel, callOptions);
-          }
-        };
-    return RecommenderStub.newStub(factory, channel);
+    return new RecommenderStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static RecommenderBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<RecommenderBlockingStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<RecommenderBlockingStub>() {
-          @java.lang.Override
-          public RecommenderBlockingStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new RecommenderBlockingStub(channel, callOptions);
-          }
-        };
-    return RecommenderBlockingStub.newStub(factory, channel);
+    return new RecommenderBlockingStub(channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static RecommenderFutureStub newFutureStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<RecommenderFutureStub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<RecommenderFutureStub>() {
-          @java.lang.Override
-          public RecommenderFutureStub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new RecommenderFutureStub(channel, callOptions);
-          }
-        };
-    return RecommenderFutureStub.newStub(factory, channel);
+    return new RecommenderFutureStub(channel);
   }
 
   /**
@@ -350,7 +386,7 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1.ListRecommendationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.ListRecommendationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListRecommendationsMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getListRecommendationsMethodHelper(), responseObserver);
     }
 
     /**
@@ -365,7 +401,7 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRecommendationMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetRecommendationMethodHelper(), responseObserver);
     }
 
     /**
@@ -386,7 +422,7 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkRecommendationClaimedMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getMarkRecommendationClaimedMethodHelper(), responseObserver);
     }
 
     /**
@@ -407,7 +443,7 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkRecommendationSucceededMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getMarkRecommendationSucceededMethodHelper(), responseObserver);
     }
 
     /**
@@ -428,42 +464,42 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1.MarkRecommendationFailedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkRecommendationFailedMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getMarkRecommendationFailedMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListRecommendationsMethod(),
+              getListRecommendationsMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommender.v1.ListRecommendationsRequest,
                       com.google.cloud.recommender.v1.ListRecommendationsResponse>(
                       this, METHODID_LIST_RECOMMENDATIONS)))
           .addMethod(
-              getGetRecommendationMethod(),
+              getGetRecommendationMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommender.v1.GetRecommendationRequest,
                       com.google.cloud.recommender.v1.Recommendation>(
                       this, METHODID_GET_RECOMMENDATION)))
           .addMethod(
-              getMarkRecommendationClaimedMethod(),
+              getMarkRecommendationClaimedMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest,
                       com.google.cloud.recommender.v1.Recommendation>(
                       this, METHODID_MARK_RECOMMENDATION_CLAIMED)))
           .addMethod(
-              getMarkRecommendationSucceededMethod(),
+              getMarkRecommendationSucceededMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest,
                       com.google.cloud.recommender.v1.Recommendation>(
                       this, METHODID_MARK_RECOMMENDATION_SUCCEEDED)))
           .addMethod(
-              getMarkRecommendationFailedMethod(),
+              getMarkRecommendationFailedMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
@@ -483,8 +519,11 @@ public final class RecommenderGrpc {
    * resources, configuration and monitoring metrics.
    * </pre>
    */
-  public static final class RecommenderStub
-      extends io.grpc.stub.AbstractAsyncStub<RecommenderStub> {
+  public static final class RecommenderStub extends io.grpc.stub.AbstractStub<RecommenderStub> {
+    private RecommenderStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
     private RecommenderStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -507,7 +546,7 @@ public final class RecommenderGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.ListRecommendationsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListRecommendationsMethod(), getCallOptions()),
+          getChannel().newCall(getListRecommendationsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -525,7 +564,7 @@ public final class RecommenderGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetRecommendationMethod(), getCallOptions()),
+          getChannel().newCall(getGetRecommendationMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -549,7 +588,7 @@ public final class RecommenderGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getMarkRecommendationClaimedMethod(), getCallOptions()),
+          getChannel().newCall(getMarkRecommendationClaimedMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -573,7 +612,7 @@ public final class RecommenderGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getMarkRecommendationSucceededMethod(), getCallOptions()),
+          getChannel().newCall(getMarkRecommendationSucceededMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -597,7 +636,7 @@ public final class RecommenderGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getMarkRecommendationFailedMethod(), getCallOptions()),
+          getChannel().newCall(getMarkRecommendationFailedMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -614,7 +653,11 @@ public final class RecommenderGrpc {
    * </pre>
    */
   public static final class RecommenderBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<RecommenderBlockingStub> {
+      extends io.grpc.stub.AbstractStub<RecommenderBlockingStub> {
+    private RecommenderBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
     private RecommenderBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -636,7 +679,7 @@ public final class RecommenderGrpc {
     public com.google.cloud.recommender.v1.ListRecommendationsResponse listRecommendations(
         com.google.cloud.recommender.v1.ListRecommendationsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getListRecommendationsMethod(), getCallOptions(), request);
+          getChannel(), getListRecommendationsMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -650,7 +693,7 @@ public final class RecommenderGrpc {
     public com.google.cloud.recommender.v1.Recommendation getRecommendation(
         com.google.cloud.recommender.v1.GetRecommendationRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetRecommendationMethod(), getCallOptions(), request);
+          getChannel(), getGetRecommendationMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -670,7 +713,7 @@ public final class RecommenderGrpc {
     public com.google.cloud.recommender.v1.Recommendation markRecommendationClaimed(
         com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest request) {
       return blockingUnaryCall(
-          getChannel(), getMarkRecommendationClaimedMethod(), getCallOptions(), request);
+          getChannel(), getMarkRecommendationClaimedMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -690,7 +733,7 @@ public final class RecommenderGrpc {
     public com.google.cloud.recommender.v1.Recommendation markRecommendationSucceeded(
         com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest request) {
       return blockingUnaryCall(
-          getChannel(), getMarkRecommendationSucceededMethod(), getCallOptions(), request);
+          getChannel(), getMarkRecommendationSucceededMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -710,7 +753,7 @@ public final class RecommenderGrpc {
     public com.google.cloud.recommender.v1.Recommendation markRecommendationFailed(
         com.google.cloud.recommender.v1.MarkRecommendationFailedRequest request) {
       return blockingUnaryCall(
-          getChannel(), getMarkRecommendationFailedMethod(), getCallOptions(), request);
+          getChannel(), getMarkRecommendationFailedMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -725,7 +768,11 @@ public final class RecommenderGrpc {
    * </pre>
    */
   public static final class RecommenderFutureStub
-      extends io.grpc.stub.AbstractFutureStub<RecommenderFutureStub> {
+      extends io.grpc.stub.AbstractStub<RecommenderFutureStub> {
+    private RecommenderFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
     private RecommenderFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -748,7 +795,7 @@ public final class RecommenderGrpc {
             com.google.cloud.recommender.v1.ListRecommendationsResponse>
         listRecommendations(com.google.cloud.recommender.v1.ListRecommendationsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListRecommendationsMethod(), getCallOptions()), request);
+          getChannel().newCall(getListRecommendationsMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -763,7 +810,7 @@ public final class RecommenderGrpc {
             com.google.cloud.recommender.v1.Recommendation>
         getRecommendation(com.google.cloud.recommender.v1.GetRecommendationRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetRecommendationMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetRecommendationMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -785,7 +832,8 @@ public final class RecommenderGrpc {
         markRecommendationClaimed(
             com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getMarkRecommendationClaimedMethod(), getCallOptions()), request);
+          getChannel().newCall(getMarkRecommendationClaimedMethodHelper(), getCallOptions()),
+          request);
     }
 
     /**
@@ -807,7 +855,8 @@ public final class RecommenderGrpc {
         markRecommendationSucceeded(
             com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getMarkRecommendationSucceededMethod(), getCallOptions()), request);
+          getChannel().newCall(getMarkRecommendationSucceededMethodHelper(), getCallOptions()),
+          request);
     }
 
     /**
@@ -829,7 +878,8 @@ public final class RecommenderGrpc {
         markRecommendationFailed(
             com.google.cloud.recommender.v1.MarkRecommendationFailedRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getMarkRecommendationFailedMethod(), getCallOptions()), request);
+          getChannel().newCall(getMarkRecommendationFailedMethodHelper(), getCallOptions()),
+          request);
     }
   }
 
@@ -951,11 +1001,11 @@ public final class RecommenderGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new RecommenderFileDescriptorSupplier())
-                      .addMethod(getListRecommendationsMethod())
-                      .addMethod(getGetRecommendationMethod())
-                      .addMethod(getMarkRecommendationClaimedMethod())
-                      .addMethod(getMarkRecommendationSucceededMethod())
-                      .addMethod(getMarkRecommendationFailedMethod())
+                      .addMethod(getListRecommendationsMethodHelper())
+                      .addMethod(getGetRecommendationMethodHelper())
+                      .addMethod(getMarkRecommendationClaimedMethodHelper())
+                      .addMethod(getMarkRecommendationSucceededMethodHelper())
+                      .addMethod(getMarkRecommendationFailedMethodHelper())
                       .build();
         }
       }
