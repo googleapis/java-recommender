@@ -288,19 +288,42 @@ public final class RecommenderGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static RecommenderStub newStub(io.grpc.Channel channel) {
-    return new RecommenderStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RecommenderStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecommenderStub>() {
+          @java.lang.Override
+          public RecommenderStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecommenderStub(channel, callOptions);
+          }
+        };
+    return RecommenderStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static RecommenderBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new RecommenderBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RecommenderBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecommenderBlockingStub>() {
+          @java.lang.Override
+          public RecommenderBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecommenderBlockingStub(channel, callOptions);
+          }
+        };
+    return RecommenderBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static RecommenderFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new RecommenderFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RecommenderFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RecommenderFutureStub>() {
+          @java.lang.Override
+          public RecommenderFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RecommenderFutureStub(channel, callOptions);
+          }
+        };
+    return RecommenderFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -460,11 +483,8 @@ public final class RecommenderGrpc {
    * resources, configuration and monitoring metrics.
    * </pre>
    */
-  public static final class RecommenderStub extends io.grpc.stub.AbstractStub<RecommenderStub> {
-    private RecommenderStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class RecommenderStub
+      extends io.grpc.stub.AbstractAsyncStub<RecommenderStub> {
     private RecommenderStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -594,11 +614,7 @@ public final class RecommenderGrpc {
    * </pre>
    */
   public static final class RecommenderBlockingStub
-      extends io.grpc.stub.AbstractStub<RecommenderBlockingStub> {
-    private RecommenderBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<RecommenderBlockingStub> {
     private RecommenderBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -709,11 +725,7 @@ public final class RecommenderGrpc {
    * </pre>
    */
   public static final class RecommenderFutureStub
-      extends io.grpc.stub.AbstractStub<RecommenderFutureStub> {
-    private RecommenderFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<RecommenderFutureStub> {
     private RecommenderFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
