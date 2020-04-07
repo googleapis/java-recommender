@@ -14,27 +14,18 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
+AUTOSYNTH_MULTIPLE_COMMITS = True
 
 service = 'recommender'
-versions = ['v1beta1']
-config_pattern = '/google/cloud/{service}/{version}/artman_{service}_{version}.yaml'
+versions = ['v1beta1', 'v1']
 
 for version in versions:
-    library = java.gapic_library(
-        service=service,
-        version=version,
-        config_pattern=config_pattern,
-        gapic=gapic,
-    )
+  library = java.bazel_library(
+      service=service,
+      version=version,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
+  )
 
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-  'README.md',
-])
-
+java.common_templates()

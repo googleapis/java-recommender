@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,6 @@ public interface RecommendationOrBuilder
    *
    * <pre>
    * Name of recommendation.
-   * A project recommendation is represented as
-   *   projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,8 +40,6 @@ public interface RecommendationOrBuilder
    *
    * <pre>
    * Name of recommendation.
-   * A project recommendation is represented as
-   *   projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -352,4 +348,70 @@ public interface RecommendationOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  java.util.List<com.google.cloud.recommender.v1beta1.Recommendation.InsightReference>
+      getAssociatedInsightsList();
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.Recommendation.InsightReference getAssociatedInsights(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  int getAssociatedInsightsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder>
+      getAssociatedInsightsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Insights that led to this recommendation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder
+      getAssociatedInsightsOrBuilder(int index);
 }

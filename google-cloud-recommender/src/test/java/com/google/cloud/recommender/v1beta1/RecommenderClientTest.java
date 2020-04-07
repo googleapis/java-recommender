@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package com.google.cloud.recommender.v1beta1;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -81,6 +82,156 @@ public class RecommenderClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listInsightsTest() {
+    String nextPageToken = "";
+    Insight insightsElement = Insight.newBuilder().build();
+    List<Insight> insights = Arrays.asList(insightsElement);
+    ListInsightsResponse expectedResponse =
+        ListInsightsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllInsights(insights)
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+
+    ListInsightsPagedResponse pagedListResponse = client.listInsights(parent);
+
+    List<Insight> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getInsightsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListInsightsRequest actualRequest = (ListInsightsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, InsightTypeName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listInsightsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+
+      client.listInsights(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getInsightTest() {
+    InsightName name2 = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    String description = "description-1724546052";
+    String insightSubtype = "insightSubtype-1491142701";
+    String etag = "etag3123477";
+    Insight expectedResponse =
+        Insight.newBuilder()
+            .setName(name2.toString())
+            .setDescription(description)
+            .setInsightSubtype(insightSubtype)
+            .setEtag(etag)
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+
+    Insight actualResponse = client.getInsight(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInsightRequest actualRequest = (GetInsightRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InsightName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getInsightExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+
+      client.getInsight(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void markInsightAcceptedTest() {
+    InsightName name2 = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    String description = "description-1724546052";
+    String insightSubtype = "insightSubtype-1491142701";
+    String etag2 = "etag2-1293302904";
+    Insight expectedResponse =
+        Insight.newBuilder()
+            .setName(name2.toString())
+            .setDescription(description)
+            .setInsightSubtype(insightSubtype)
+            .setEtag(etag2)
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    Map<String, String> stateMetadata = new HashMap<>();
+    String etag = "etag3123477";
+
+    Insight actualResponse = client.markInsightAccepted(name, stateMetadata, etag);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MarkInsightAcceptedRequest actualRequest = (MarkInsightAcceptedRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InsightName.parse(actualRequest.getName()));
+    Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void markInsightAcceptedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+      Map<String, String> stateMetadata = new HashMap<>();
+      String etag = "etag3123477";
+
+      client.markInsightAccepted(name, stateMetadata, etag);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listRecommendationsTest() {
     String nextPageToken = "";
     Recommendation recommendationsElement = Recommendation.newBuilder().build();
@@ -92,12 +243,10 @@ public class RecommenderClientTest {
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    String formattedParent =
-        RecommenderClient.formatRecommenderName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+    RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
     String filter = "filter-1274492040";
 
-    ListRecommendationsPagedResponse pagedListResponse =
-        client.listRecommendations(formattedParent, filter);
+    ListRecommendationsPagedResponse pagedListResponse = client.listRecommendations(parent, filter);
 
     List<Recommendation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -107,7 +256,7 @@ public class RecommenderClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListRecommendationsRequest actualRequest = (ListRecommendationsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, RecommenderName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -122,11 +271,10 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      String formattedParent =
-          RecommenderClient.formatRecommenderName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
       String filter = "filter-1274492040";
 
-      client.listRecommendations(formattedParent, filter);
+      client.listRecommendations(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -136,31 +284,31 @@ public class RecommenderClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRecommendationTest() {
-    String name2 = "name2-1052831874";
+    RecommendationName name2 =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     String description = "description-1724546052";
     String recommenderSubtype = "recommenderSubtype-1488504412";
     String etag = "etag3123477";
     Recommendation expectedResponse =
         Recommendation.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setRecommenderSubtype(recommenderSubtype)
             .setEtag(etag)
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    String formattedName =
-        RecommenderClient.formatRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    RecommendationName name =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
 
-    Recommendation actualResponse = client.getRecommendation(formattedName);
+    Recommendation actualResponse = client.getRecommendation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetRecommendationRequest actualRequest = (GetRecommendationRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, RecommendationName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -174,11 +322,10 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      String formattedName =
-          RecommenderClient.formatRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      RecommendationName name =
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
 
-      client.getRecommendation(formattedName);
+      client.getRecommendation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -188,27 +335,26 @@ public class RecommenderClientTest {
   @Test
   @SuppressWarnings("all")
   public void markRecommendationClaimedTest() {
-    String name2 = "name2-1052831874";
+    RecommendationName name2 =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     String description = "description-1724546052";
     String recommenderSubtype = "recommenderSubtype-1488504412";
     String etag2 = "etag2-1293302904";
     Recommendation expectedResponse =
         Recommendation.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setRecommenderSubtype(recommenderSubtype)
             .setEtag(etag2)
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    String formattedName =
-        RecommenderClient.formatRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    RecommendationName name =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
-    Recommendation actualResponse =
-        client.markRecommendationClaimed(formattedName, stateMetadata, etag);
+    Recommendation actualResponse = client.markRecommendationClaimed(name, stateMetadata, etag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
@@ -216,7 +362,7 @@ public class RecommenderClientTest {
     MarkRecommendationClaimedRequest actualRequest =
         (MarkRecommendationClaimedRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, RecommendationName.parse(actualRequest.getName()));
     Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
     Assert.assertEquals(etag, actualRequest.getEtag());
     Assert.assertTrue(
@@ -232,13 +378,12 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      String formattedName =
-          RecommenderClient.formatRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      RecommendationName name =
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
 
-      client.markRecommendationClaimed(formattedName, stateMetadata, etag);
+      client.markRecommendationClaimed(name, stateMetadata, etag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -248,27 +393,26 @@ public class RecommenderClientTest {
   @Test
   @SuppressWarnings("all")
   public void markRecommendationSucceededTest() {
-    String name2 = "name2-1052831874";
+    RecommendationName name2 =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     String description = "description-1724546052";
     String recommenderSubtype = "recommenderSubtype-1488504412";
     String etag2 = "etag2-1293302904";
     Recommendation expectedResponse =
         Recommendation.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setRecommenderSubtype(recommenderSubtype)
             .setEtag(etag2)
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    String formattedName =
-        RecommenderClient.formatRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    RecommendationName name =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
-    Recommendation actualResponse =
-        client.markRecommendationSucceeded(formattedName, stateMetadata, etag);
+    Recommendation actualResponse = client.markRecommendationSucceeded(name, stateMetadata, etag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
@@ -276,7 +420,7 @@ public class RecommenderClientTest {
     MarkRecommendationSucceededRequest actualRequest =
         (MarkRecommendationSucceededRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, RecommendationName.parse(actualRequest.getName()));
     Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
     Assert.assertEquals(etag, actualRequest.getEtag());
     Assert.assertTrue(
@@ -292,13 +436,12 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      String formattedName =
-          RecommenderClient.formatRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      RecommendationName name =
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
 
-      client.markRecommendationSucceeded(formattedName, stateMetadata, etag);
+      client.markRecommendationSucceeded(name, stateMetadata, etag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -308,27 +451,26 @@ public class RecommenderClientTest {
   @Test
   @SuppressWarnings("all")
   public void markRecommendationFailedTest() {
-    String name2 = "name2-1052831874";
+    RecommendationName name2 =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     String description = "description-1724546052";
     String recommenderSubtype = "recommenderSubtype-1488504412";
     String etag2 = "etag2-1293302904";
     Recommendation expectedResponse =
         Recommendation.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setRecommenderSubtype(recommenderSubtype)
             .setEtag(etag2)
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    String formattedName =
-        RecommenderClient.formatRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    RecommendationName name =
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
-    Recommendation actualResponse =
-        client.markRecommendationFailed(formattedName, stateMetadata, etag);
+    Recommendation actualResponse = client.markRecommendationFailed(name, stateMetadata, etag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
@@ -336,7 +478,7 @@ public class RecommenderClientTest {
     MarkRecommendationFailedRequest actualRequest =
         (MarkRecommendationFailedRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, RecommendationName.parse(actualRequest.getName()));
     Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
     Assert.assertEquals(etag, actualRequest.getEtag());
     Assert.assertTrue(
@@ -352,13 +494,12 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      String formattedName =
-          RecommenderClient.formatRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      RecommendationName name =
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
 
-      client.markRecommendationFailed(formattedName, stateMetadata, etag);
+      client.markRecommendationFailed(name, stateMetadata, etag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

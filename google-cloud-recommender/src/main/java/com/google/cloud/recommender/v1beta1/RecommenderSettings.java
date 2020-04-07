@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package com.google.cloud.recommender.v1beta1;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -48,14 +49,18 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getRecommendation to 30 seconds:
+ * <p>For example, to set the total timeout of getInsight to 30 seconds:
  *
  * <pre>
  * <code>
  * RecommenderSettings.Builder recommenderSettingsBuilder =
  *     RecommenderSettings.newBuilder();
- * recommenderSettingsBuilder.getRecommendationSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * recommenderSettingsBuilder
+ *     .getInsightSettings()
+ *     .setRetrySettings(
+ *         recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
  * </code>
  * </pre>
@@ -63,6 +68,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
+  /** Returns the object with the settings used for calls to listInsights. */
+  public PagedCallSettings<ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+      listInsightsSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).listInsightsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getInsight. */
+  public UnaryCallSettings<GetInsightRequest, Insight> getInsightSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).getInsightSettings();
+  }
+
+  /** Returns the object with the settings used for calls to markInsightAccepted. */
+  public UnaryCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).markInsightAcceptedSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRecommendations. */
   public PagedCallSettings<
           ListRecommendationsRequest, ListRecommendationsResponse, ListRecommendationsPagedResponse>
@@ -187,6 +208,24 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to listInsights. */
+    public PagedCallSettings.Builder<
+            ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+        listInsightsSettings() {
+      return getStubSettingsBuilder().listInsightsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getInsight. */
+    public UnaryCallSettings.Builder<GetInsightRequest, Insight> getInsightSettings() {
+      return getStubSettingsBuilder().getInsightSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to markInsightAccepted. */
+    public UnaryCallSettings.Builder<MarkInsightAcceptedRequest, Insight>
+        markInsightAcceptedSettings() {
+      return getStubSettingsBuilder().markInsightAcceptedSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRecommendations. */
