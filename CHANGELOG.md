@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-recommender/compare/v1.0.0...v1.0.1) (2020-06-18)
+
+
+### Bug Fixes
+
+* update retry settings from grpc_service_config ([#201](https://www.github.com/googleapis/java-recommender/issues/201)) ([1bb2dea](https://www.github.com/googleapis/java-recommender/commit/1bb2dea350680d51ff1e0dcd5705a752c5d1f771))
+
 ## [1.0.0](https://www.github.com/googleapis/java-recommender/compare/v0.4.1...v1.0.0) (2020-06-12)
 
 
