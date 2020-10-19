@@ -16,9 +16,6 @@
 package com.google.cloud.recommender.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.ServiceOptions;
