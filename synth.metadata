@@ -11,21 +11,23 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "121ec62ffda4a20e726631be34d76ad35373ca15"
+        "sha": "4004f5e26358d3bcce180a2f9c15e890971fa2f3",
+        "internalRef": "337386065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "121ec62ffda4a20e726631be34d76ad35373ca15"
+        "sha": "4004f5e26358d3bcce180a2f9c15e890971fa2f3",
+        "internalRef": "337386065"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "27e0e916cbfdb3d5ff6639b686cc04f78a0b0386"
+        "sha": "7c5370937dd9ba9dcf9cd7d2af880a58b389b4f1"
       }
     }
   ],
@@ -58,6 +60,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/formatting.yaml",
