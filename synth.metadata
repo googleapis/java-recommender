@@ -4,30 +4,28 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommender.git",
-        "sha": "8bc84e5422513fa52f1a558f5c1d366cda7d8341"
+        "sha": "e6a3e12feb07c8ed574340b8ca3b0cfd31c1d656"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5202cfe3e5c2907a1a21a4c6d4bd0812029b6aa3",
-        "internalRef": "319247865"
+        "sha": "121ec62ffda4a20e726631be34d76ad35373ca15"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5202cfe3e5c2907a1a21a4c6d4bd0812029b6aa3",
-        "internalRef": "319247865"
+        "sha": "121ec62ffda4a20e726631be34d76ad35373ca15"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
+        "sha": "27e0e916cbfdb3d5ff6639b686cc04f78a0b0386"
       }
     }
   ],
