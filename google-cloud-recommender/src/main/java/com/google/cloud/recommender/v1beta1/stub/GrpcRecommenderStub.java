@@ -173,11 +173,21 @@ public class GrpcRecommenderStub extends RecommenderStub {
         RecommenderStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcRecommenderStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcRecommenderStub(RecommenderStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcRecommenderCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcRecommenderStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcRecommenderStub(
       RecommenderStubSettings settings,
       ClientContext clientContext,
