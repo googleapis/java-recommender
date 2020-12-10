@@ -22,16 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Provides insights and recommendations for cloud customers for various
- * categories like performance optimization, cost savings, reliability, feature
- * discovery, etc. Insights and recommendations are generated automatically
- * based on analysis of user resources, configuration and monitoring metrics.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/recommender/v1beta1/recommender_service.proto")
@@ -468,26 +459,10 @@ public final class RecommenderGrpc {
     return RecommenderFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Provides insights and recommendations for cloud customers for various
-   * categories like performance optimization, cost savings, reliability, feature
-   * discovery, etc. Insights and recommendations are generated automatically
-   * based on analysis of user resources, configuration and monitoring metrics.
-   * </pre>
-   */
+  /** */
   public abstract static class RecommenderImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
-     * </pre>
-     */
+    /** */
     public void listInsights(
         com.google.cloud.recommender.v1beta1.ListInsightsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightsResponse>
@@ -495,14 +470,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getListInsightsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested insight. Requires the recommender.*.get IAM permission
-     * for the specified insight type.
-     * </pre>
-     */
+    /** */
     public void getInsight(
         com.google.cloud.recommender.v1beta1.GetInsightRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
@@ -510,17 +478,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getGetInsightMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Insight State as Accepted. Users can use this method to
-     * indicate to the Recommender API that they have applied some action based
-     * on the insight. This stops the insight content from being updated.
-     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
-     * the recommender.*.update IAM permission for the specified insight.
-     * </pre>
-     */
+    /** */
     public void markInsightAccepted(
         com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
@@ -528,14 +486,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getMarkInsightAcceptedMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public void listRecommendations(
         com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request,
         io.grpc.stub.StreamObserver<
@@ -544,14 +495,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getListRecommendationsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested recommendation. Requires the recommender.*.get
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public void getRecommendation(
         com.google.cloud.recommender.v1beta1.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -559,20 +503,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getGetRecommendationMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Claimed. Users can use this method to
-     * indicate to the Recommender API that they are starting to apply the
-     * recommendation themselves. This stops the recommendation content from being
-     * updated. Associated insights are frozen and placed in the ACCEPTED state.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
-     * ACTIVE state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public void markRecommendationClaimed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -580,21 +511,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getMarkRecommendationClaimedMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Succeeded. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated. Associated insights are frozen and placed in
-     * the ACCEPTED state.
-     * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public void markRecommendationSucceeded(
         com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -602,21 +519,7 @@ public final class RecommenderGrpc {
       asyncUnimplementedUnaryCall(getMarkRecommendationSucceededMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Failed. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation failed. This stops the recommendation content
-     * from being updated. Associated insights are frozen and placed in the
-     * ACCEPTED state.
-     * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public void markRecommendationFailed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -686,16 +589,7 @@ public final class RecommenderGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Provides insights and recommendations for cloud customers for various
-   * categories like performance optimization, cost savings, reliability, feature
-   * discovery, etc. Insights and recommendations are generated automatically
-   * based on analysis of user resources, configuration and monitoring metrics.
-   * </pre>
-   */
+  /** */
   public static final class RecommenderStub
       extends io.grpc.stub.AbstractAsyncStub<RecommenderStub> {
     private RecommenderStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -707,14 +601,7 @@ public final class RecommenderGrpc {
       return new RecommenderStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
-     * </pre>
-     */
+    /** */
     public void listInsights(
         com.google.cloud.recommender.v1beta1.ListInsightsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightsResponse>
@@ -725,14 +612,7 @@ public final class RecommenderGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested insight. Requires the recommender.*.get IAM permission
-     * for the specified insight type.
-     * </pre>
-     */
+    /** */
     public void getInsight(
         com.google.cloud.recommender.v1beta1.GetInsightRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
@@ -741,17 +621,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getGetInsightMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Insight State as Accepted. Users can use this method to
-     * indicate to the Recommender API that they have applied some action based
-     * on the insight. This stops the insight content from being updated.
-     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
-     * the recommender.*.update IAM permission for the specified insight.
-     * </pre>
-     */
+    /** */
     public void markInsightAccepted(
         com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight>
@@ -762,14 +632,7 @@ public final class RecommenderGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public void listRecommendations(
         com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request,
         io.grpc.stub.StreamObserver<
@@ -781,14 +644,7 @@ public final class RecommenderGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested recommendation. Requires the recommender.*.get
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public void getRecommendation(
         com.google.cloud.recommender.v1beta1.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -799,20 +655,7 @@ public final class RecommenderGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Claimed. Users can use this method to
-     * indicate to the Recommender API that they are starting to apply the
-     * recommendation themselves. This stops the recommendation content from being
-     * updated. Associated insights are frozen and placed in the ACCEPTED state.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
-     * ACTIVE state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public void markRecommendationClaimed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -823,21 +666,7 @@ public final class RecommenderGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Succeeded. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated. Associated insights are frozen and placed in
-     * the ACCEPTED state.
-     * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public void markRecommendationSucceeded(
         com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -848,21 +677,7 @@ public final class RecommenderGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Failed. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation failed. This stops the recommendation content
-     * from being updated. Associated insights are frozen and placed in the
-     * ACCEPTED state.
-     * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public void markRecommendationFailed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation>
@@ -874,16 +689,7 @@ public final class RecommenderGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Provides insights and recommendations for cloud customers for various
-   * categories like performance optimization, cost savings, reliability, feature
-   * discovery, etc. Insights and recommendations are generated automatically
-   * based on analysis of user resources, configuration and monitoring metrics.
-   * </pre>
-   */
+  /** */
   public static final class RecommenderBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<RecommenderBlockingStub> {
     private RecommenderBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -896,133 +702,54 @@ public final class RecommenderGrpc {
       return new RecommenderBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.ListInsightsResponse listInsights(
         com.google.cloud.recommender.v1beta1.ListInsightsRequest request) {
       return blockingUnaryCall(getChannel(), getListInsightsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested insight. Requires the recommender.*.get IAM permission
-     * for the specified insight type.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.Insight getInsight(
         com.google.cloud.recommender.v1beta1.GetInsightRequest request) {
       return blockingUnaryCall(getChannel(), getGetInsightMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Insight State as Accepted. Users can use this method to
-     * indicate to the Recommender API that they have applied some action based
-     * on the insight. This stops the insight content from being updated.
-     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
-     * the recommender.*.update IAM permission for the specified insight.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.Insight markInsightAccepted(
         com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request) {
       return blockingUnaryCall(
           getChannel(), getMarkInsightAcceptedMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.ListRecommendationsResponse listRecommendations(
         com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListRecommendationsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested recommendation. Requires the recommender.*.get
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.Recommendation getRecommendation(
         com.google.cloud.recommender.v1beta1.GetRecommendationRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetRecommendationMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Claimed. Users can use this method to
-     * indicate to the Recommender API that they are starting to apply the
-     * recommendation themselves. This stops the recommendation content from being
-     * updated. Associated insights are frozen and placed in the ACCEPTED state.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
-     * ACTIVE state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.Recommendation markRecommendationClaimed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request) {
       return blockingUnaryCall(
           getChannel(), getMarkRecommendationClaimedMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Succeeded. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated. Associated insights are frozen and placed in
-     * the ACCEPTED state.
-     * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.Recommendation markRecommendationSucceeded(
         com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request) {
       return blockingUnaryCall(
           getChannel(), getMarkRecommendationSucceededMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Failed. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation failed. This stops the recommendation content
-     * from being updated. Associated insights are frozen and placed in the
-     * ACCEPTED state.
-     * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.recommender.v1beta1.Recommendation markRecommendationFailed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request) {
       return blockingUnaryCall(
@@ -1030,16 +757,7 @@ public final class RecommenderGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Provides insights and recommendations for cloud customers for various
-   * categories like performance optimization, cost savings, reliability, feature
-   * discovery, etc. Insights and recommendations are generated automatically
-   * based on analysis of user resources, configuration and monitoring metrics.
-   * </pre>
-   */
+  /** */
   public static final class RecommenderFutureStub
       extends io.grpc.stub.AbstractFutureStub<RecommenderFutureStub> {
     private RecommenderFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1052,14 +770,7 @@ public final class RecommenderGrpc {
       return new RecommenderFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.ListInsightsResponse>
         listInsights(com.google.cloud.recommender.v1beta1.ListInsightsRequest request) {
@@ -1067,14 +778,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getListInsightsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested insight. Requires the recommender.*.get IAM permission
-     * for the specified insight type.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.Insight>
         getInsight(com.google.cloud.recommender.v1beta1.GetInsightRequest request) {
@@ -1082,17 +786,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getGetInsightMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Insight State as Accepted. Users can use this method to
-     * indicate to the Recommender API that they have applied some action based
-     * on the insight. This stops the insight content from being updated.
-     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
-     * the recommender.*.update IAM permission for the specified insight.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.Insight>
         markInsightAccepted(
@@ -1101,14 +795,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getMarkInsightAcceptedMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.ListRecommendationsResponse>
         listRecommendations(
@@ -1117,14 +804,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getListRecommendationsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the requested recommendation. Requires the recommender.*.get
-     * IAM permission for the specified recommender.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.Recommendation>
         getRecommendation(com.google.cloud.recommender.v1beta1.GetRecommendationRequest request) {
@@ -1132,20 +812,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getGetRecommendationMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Claimed. Users can use this method to
-     * indicate to the Recommender API that they are starting to apply the
-     * recommendation themselves. This stops the recommendation content from being
-     * updated. Associated insights are frozen and placed in the ACCEPTED state.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
-     * ACTIVE state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.Recommendation>
         markRecommendationClaimed(
@@ -1154,21 +821,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getMarkRecommendationClaimedMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Succeeded. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated. Associated insights are frozen and placed in
-     * the ACCEPTED state.
-     * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.Recommendation>
         markRecommendationSucceeded(
@@ -1177,21 +830,7 @@ public final class RecommenderGrpc {
           getChannel().newCall(getMarkRecommendationSucceededMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Marks the Recommendation State as Failed. Users can use this method to
-     * indicate to the Recommender API that they have applied the recommendation
-     * themselves, and the operation failed. This stops the recommendation content
-     * from being updated. Associated insights are frozen and placed in the
-     * ACCEPTED state.
-     * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
-     * CLAIMED, SUCCEEDED, or FAILED state.
-     * Requires the recommender.*.update IAM permission for the specified
-     * recommender.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.recommender.v1beta1.Recommendation>
         markRecommendationFailed(
