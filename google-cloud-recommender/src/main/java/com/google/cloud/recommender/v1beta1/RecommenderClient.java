@@ -274,7 +274,7 @@ public class RecommenderClient implements BackgroundResource {
    * recommender.&#42;.update IAM permission for the specified insight.
    *
    * @param name Required. Name of the insight.
-   * @param state_metadata Optional. State properties user wish to include with this state. Full
+   * @param stateMetadata Optional. State properties user wish to include with this state. Full
    *     replace of the current state_metadata.
    * @param etag Required. Fingerprint of the Insight. Provides optimistic locking.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -300,7 +300,7 @@ public class RecommenderClient implements BackgroundResource {
    * recommender.&#42;.update IAM permission for the specified insight.
    *
    * @param name Required. Name of the insight.
-   * @param state_metadata Optional. State properties user wish to include with this state. Full
+   * @param stateMetadata Optional. State properties user wish to include with this state. Full
    *     replace of the current state_metadata.
    * @param etag Required. Fingerprint of the Insight. Provides optimistic locking.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -490,7 +490,7 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * @param name Required. Name of the recommendation.
-   * @param state_metadata State properties to include with this state. Overwrites any existing
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
    *     `state_metadata`. Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/. Values must
    *     match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * @param etag Required. Fingerprint of the Recommendation. Provides optimistic locking.
@@ -519,7 +519,7 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * @param name Required. Name of the recommendation.
-   * @param state_metadata State properties to include with this state. Overwrites any existing
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
    *     `state_metadata`. Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/. Values must
    *     match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * @param etag Required. Fingerprint of the Recommendation. Provides optimistic locking.
@@ -585,7 +585,7 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * @param name Required. Name of the recommendation.
-   * @param state_metadata State properties to include with this state. Overwrites any existing
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
    *     `state_metadata`. Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/. Values must
    *     match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * @param etag Required. Fingerprint of the Recommendation. Provides optimistic locking.
@@ -615,7 +615,7 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * @param name Required. Name of the recommendation.
-   * @param state_metadata State properties to include with this state. Overwrites any existing
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
    *     `state_metadata`. Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/. Values must
    *     match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * @param etag Required. Fingerprint of the Recommendation. Provides optimistic locking.
@@ -684,7 +684,7 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * @param name Required. Name of the recommendation.
-   * @param state_metadata State properties to include with this state. Overwrites any existing
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
    *     `state_metadata`. Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/. Values must
    *     match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * @param etag Required. Fingerprint of the Recommendation. Provides optimistic locking.
@@ -714,7 +714,7 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * @param name Required. Name of the recommendation.
-   * @param state_metadata State properties to include with this state. Overwrites any existing
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
    *     `state_metadata`. Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/. Values must
    *     match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
    * @param etag Required. Fingerprint of the Recommendation. Provides optimistic locking.
