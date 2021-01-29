@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-recommender/compare/v1.3.0...v1.4.0) (2021-01-29)
+
+
+### Features
+
+* Add support for "billingAccounts" as another parent resource name for recommendations and insights APIs. ([#383](https://www.github.com/googleapis/java-recommender/issues/383)) ([2145cee](https://www.github.com/googleapis/java-recommender/commit/2145cee790f5f0640b2d926af33558025700ec69))
+
+
+### Reverts
+
+* Add support for "billingAccounts" as another parent resource name for recommendations and insights APIs. ([#386](https://www.github.com/googleapis/java-recommender/issues/386)) ([c867009](https://www.github.com/googleapis/java-recommender/commit/c8670091791bd58922198789a65f7070dc014b3c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#393](https://www.github.com/googleapis/java-recommender/issues/393)) ([27b0b4f](https://www.github.com/googleapis/java-recommender/commit/27b0b4f863fe844f0d322c3f71f653adb36304dc))
+
 ## [1.3.0](https://www.github.com/googleapis/java-recommender/compare/v1.2.9...v1.3.0) (2020-12-16)
 
 
