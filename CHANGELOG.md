@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://www.github.com/googleapis/java-recommender/compare/v1.6.1...v1.7.0) (2021-10-01)
+
+
+### Features
+
+* configure initial sp version ([#551](https://www.github.com/googleapis/java-recommender/issues/551)) ([25948f4](https://www.github.com/googleapis/java-recommender/commit/25948f447f303bc6c90f8caabe1cfc33a4fb21ae))
+
 ### [1.6.1](https://www.github.com/googleapis/java-recommender/compare/v1.6.0...v1.6.1) (2021-07-02)
 
 
