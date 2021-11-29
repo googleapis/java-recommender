@@ -85,8 +85,7 @@ public final class RecommendationOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "0google/cloud/recommender/v1/recommenda"
-          + "tion.proto\022\033google.cloud.recommender.v1\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\376\007\n"
+          + "0google/cloud/recommender/v1/recommendation.proto\022\033google.cloud.recommender.v1\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\376\007\n"
           + "\016Recommendation\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n"
           + "\013description\030\002 \001(\t\022\033\n"
@@ -105,8 +104,7 @@ public final class RecommendationOuterClass {
           + "\007insight\030\001 \001(\t:\332\003\352A\326\003\n"
           + ")recommender.googleapis.com/Recommendation\022cprojects/{proj"
           + "ect}/locations/{location}/recommenders/{recommender}/recommendations/{recommenda"
-          + "tion}\022rbillingAccounts/{billing_account}/locations/{location}/recommenders/{reco"
-          + "mmender}/recommendations/{recommendation}\022afolders/{folder}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\022morganizations/{organization}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\"^\n"
+          + "tion}\022rbillingAccounts/{billing_account}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\022afolders/{folder}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\022morganizations/{organization}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\"^\n"
           + "\025RecommendationContent\022E\n"
           + "\020operation_groups\030\002"
           + " \003(\0132+.google.cloud.recommender.v1.OperationGroup\"L\n"
