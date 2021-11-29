@@ -85,8 +85,8 @@ public final class RecommendationOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "5google/cloud/recommender/v1beta1/recommendation.proto\022 google.cloud.recommende"
-          + "r.v1beta1\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\227\010\n"
+          + "5google/cloud/recommender/v1beta1/recommendation.proto\022"
+          + " google.cloud.recommender.v1beta1\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\227\010\n"
           + "\016Recommendation\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n"
           + "\013description\030\002 \001(\t\022\033\n"
@@ -107,8 +107,7 @@ public final class RecommendationOuterClass {
           + ")recommender.googleapis.com/Recommendation\022cprojects/{project}/"
           + "locations/{location}/recommenders/{recommender}/recommendations/{recommendation}"
           + "\022rbillingAccounts/{billing_account}/locations/{location}/recommenders/{recommend"
-          + "er}/recommendations/{recommendation}\022afolders/{folder}/locations/{location}/reco"
-          + "mmenders/{recommender}/recommendations/{recommendation}\022morganizations/{organization}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\"c\n"
+          + "er}/recommendations/{recommendation}\022afolders/{folder}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\022morganizations/{organization}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}\"c\n"
           + "\025RecommendationContent\022J\n"
           + "\020operation_groups\030\002"
           + " \003(\01320.google.cloud.recommender.v1beta1.OperationGroup\"Q\n"
