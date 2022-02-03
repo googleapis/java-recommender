@@ -6,6 +6,9 @@
 ### Features
 
 * Recommendation Priority / Insight Severity ([#709](https://github.com/googleapis/java-recommender/issues/709)) ([5758d5d](https://github.com/googleapis/java-recommender/commit/5758d5de29033ec29c2c473c78badab0199fb820))
+* feat: Recommendation xor_group_id
+* feat: Recommendation security projection
+* feat: Configurable recommenders
 
 
 ### Dependencies
