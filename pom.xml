@@ -70,7 +70,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommender-v1beta1</artifactId>
-        <version>0.17.7</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
+        <version>0.18.0</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
