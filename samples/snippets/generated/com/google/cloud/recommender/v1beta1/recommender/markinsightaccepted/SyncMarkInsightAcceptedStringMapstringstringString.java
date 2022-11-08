@@ -16,30 +16,34 @@
 
 package com.google.cloud.recommender.v1beta1.samples;
 
-// [START recommender_v1beta1_generated_RecommenderSettings_GetInsight_sync]
-import com.google.cloud.recommender.v1beta1.RecommenderSettings;
-import java.time.Duration;
+// [START recommender_v1beta1_generated_Recommender_MarkInsightAccepted_StringMapstringstringString_sync]
+import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.InsightName;
+import com.google.cloud.recommender.v1beta1.RecommenderClient;
+import java.util.HashMap;
+import java.util.Map;
 
-public class SyncGetInsight {
+public class SyncMarkInsightAcceptedStringMapstringstringString {
 
   public static void main(String[] args) throws Exception {
-    syncGetInsight();
+    syncMarkInsightAcceptedStringMapstringstringString();
   }
 
-  public static void syncGetInsight() throws Exception {
+  public static void syncMarkInsightAcceptedStringMapstringstringString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    RecommenderSettings.Builder recommenderSettingsBuilder = RecommenderSettings.newBuilder();
-    recommenderSettingsBuilder
-        .getInsightSettings()
-        .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
+    try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+      String name =
+          InsightName.ofProjectLocationInsightTypeInsightName(
+                  "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]")
+              .toString();
+      Map<String, String> stateMetadata = new HashMap<>();
+      String etag = "etag3123477";
+      Insight response = recommenderClient.markInsightAccepted(name, stateMetadata, etag);
+    }
   }
 }
-// [END recommender_v1beta1_generated_RecommenderSettings_GetInsight_sync]
+// [END recommender_v1beta1_generated_Recommender_MarkInsightAccepted_StringMapstringstringString_sync]

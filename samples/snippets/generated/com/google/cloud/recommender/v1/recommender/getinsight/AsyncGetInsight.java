@@ -16,30 +16,37 @@
 
 package com.google.cloud.recommender.v1.samples;
 
-// [START recommender_v1_generated_RecommenderSettings_GetInsight_sync]
-import com.google.cloud.recommender.v1.RecommenderSettings;
-import java.time.Duration;
+// [START recommender_v1_generated_Recommender_GetInsight_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.recommender.v1.GetInsightRequest;
+import com.google.cloud.recommender.v1.Insight;
+import com.google.cloud.recommender.v1.InsightName;
+import com.google.cloud.recommender.v1.RecommenderClient;
 
-public class SyncGetInsight {
+public class AsyncGetInsight {
 
   public static void main(String[] args) throws Exception {
-    syncGetInsight();
+    asyncGetInsight();
   }
 
-  public static void syncGetInsight() throws Exception {
+  public static void asyncGetInsight() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    RecommenderSettings.Builder recommenderSettingsBuilder = RecommenderSettings.newBuilder();
-    recommenderSettingsBuilder
-        .getInsightSettings()
-        .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
+    try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+      GetInsightRequest request =
+          GetInsightRequest.newBuilder()
+              .setName(
+                  InsightName.ofProjectLocationInsightTypeInsightName(
+                          "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]")
+                      .toString())
+              .build();
+      ApiFuture<Insight> future = recommenderClient.getInsightCallable().futureCall(request);
+      // Do something.
+      Insight response = future.get();
+    }
   }
 }
-// [END recommender_v1_generated_RecommenderSettings_GetInsight_sync]
+// [END recommender_v1_generated_Recommender_GetInsight_async]

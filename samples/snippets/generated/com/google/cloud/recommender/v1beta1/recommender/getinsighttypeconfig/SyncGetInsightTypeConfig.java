@@ -16,30 +16,34 @@
 
 package com.google.cloud.recommender.v1beta1.samples;
 
-// [START recommender_v1beta1_generated_RecommenderSettings_GetInsight_sync]
-import com.google.cloud.recommender.v1beta1.RecommenderSettings;
-import java.time.Duration;
+// [START recommender_v1beta1_generated_Recommender_GetInsightTypeConfig_sync]
+import com.google.cloud.recommender.v1beta1.GetInsightTypeConfigRequest;
+import com.google.cloud.recommender.v1beta1.InsightTypeConfig;
+import com.google.cloud.recommender.v1beta1.InsightTypeConfigName;
+import com.google.cloud.recommender.v1beta1.RecommenderClient;
 
-public class SyncGetInsight {
+public class SyncGetInsightTypeConfig {
 
   public static void main(String[] args) throws Exception {
-    syncGetInsight();
+    syncGetInsightTypeConfig();
   }
 
-  public static void syncGetInsight() throws Exception {
+  public static void syncGetInsightTypeConfig() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    RecommenderSettings.Builder recommenderSettingsBuilder = RecommenderSettings.newBuilder();
-    recommenderSettingsBuilder
-        .getInsightSettings()
-        .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
+    try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+      GetInsightTypeConfigRequest request =
+          GetInsightTypeConfigRequest.newBuilder()
+              .setName(
+                  InsightTypeConfigName.ofProjectLocationInsightTypeName(
+                          "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+                      .toString())
+              .build();
+      InsightTypeConfig response = recommenderClient.getInsightTypeConfig(request);
+    }
   }
 }
-// [END recommender_v1beta1_generated_RecommenderSettings_GetInsight_sync]
+// [END recommender_v1beta1_generated_Recommender_GetInsightTypeConfig_sync]

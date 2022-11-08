@@ -16,30 +16,39 @@
 
 package com.google.cloud.recommender.v1.samples;
 
-// [START recommender_v1_generated_RecommenderSettings_GetInsight_sync]
-import com.google.cloud.recommender.v1.RecommenderSettings;
-import java.time.Duration;
+// [START recommender_v1_generated_Recommender_ListInsights_sync]
+import com.google.cloud.recommender.v1.Insight;
+import com.google.cloud.recommender.v1.InsightTypeName;
+import com.google.cloud.recommender.v1.ListInsightsRequest;
+import com.google.cloud.recommender.v1.RecommenderClient;
 
-public class SyncGetInsight {
+public class SyncListInsights {
 
   public static void main(String[] args) throws Exception {
-    syncGetInsight();
+    syncListInsights();
   }
 
-  public static void syncGetInsight() throws Exception {
+  public static void syncListInsights() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    RecommenderSettings.Builder recommenderSettingsBuilder = RecommenderSettings.newBuilder();
-    recommenderSettingsBuilder
-        .getInsightSettings()
-        .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
+    try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+      ListInsightsRequest request =
+          ListInsightsRequest.newBuilder()
+              .setParent(
+                  InsightTypeName.ofProjectLocationInsightTypeName(
+                          "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      for (Insight element : recommenderClient.listInsights(request).iterateAll()) {
+        // doThingsWith(element);
+      }
+    }
   }
 }
-// [END recommender_v1_generated_RecommenderSettings_GetInsight_sync]
+// [END recommender_v1_generated_Recommender_ListInsights_sync]

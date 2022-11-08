@@ -14,33 +14,31 @@
  * limitations under the License.
  */
 
-package com.google.cloud.recommender.v1.stub.samples;
+package com.google.cloud.recommender.v1.samples;
 
-// [START recommender_v1_generated_RecommenderStubSettings_GetInsight_sync]
-import com.google.cloud.recommender.v1.stub.RecommenderStubSettings;
-import java.time.Duration;
+// [START recommender_v1_generated_Recommender_GetRecommenderConfig_Recommenderconfigname_sync]
+import com.google.cloud.recommender.v1.RecommenderClient;
+import com.google.cloud.recommender.v1.RecommenderConfig;
+import com.google.cloud.recommender.v1.RecommenderConfigName;
 
-public class SyncGetInsight {
+public class SyncGetRecommenderConfigRecommenderconfigname {
 
   public static void main(String[] args) throws Exception {
-    syncGetInsight();
+    syncGetRecommenderConfigRecommenderconfigname();
   }
 
-  public static void syncGetInsight() throws Exception {
+  public static void syncGetRecommenderConfigRecommenderconfigname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    RecommenderStubSettings.Builder recommenderSettingsBuilder =
-        RecommenderStubSettings.newBuilder();
-    recommenderSettingsBuilder
-        .getInsightSettings()
-        .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    RecommenderStubSettings recommenderSettings = recommenderSettingsBuilder.build();
+    try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+      RecommenderConfigName name =
+          RecommenderConfigName.ofProjectLocationRecommenderName(
+              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      RecommenderConfig response = recommenderClient.getRecommenderConfig(name);
+    }
   }
 }
-// [END recommender_v1_generated_RecommenderStubSettings_GetInsight_sync]
+// [END recommender_v1_generated_Recommender_GetRecommenderConfig_Recommenderconfigname_sync]

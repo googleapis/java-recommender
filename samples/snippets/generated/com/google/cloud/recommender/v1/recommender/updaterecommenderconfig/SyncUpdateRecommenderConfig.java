@@ -14,33 +14,35 @@
  * limitations under the License.
  */
 
-package com.google.cloud.recommender.v1.stub.samples;
+package com.google.cloud.recommender.v1.samples;
 
-// [START recommender_v1_generated_RecommenderStubSettings_GetInsight_sync]
-import com.google.cloud.recommender.v1.stub.RecommenderStubSettings;
-import java.time.Duration;
+// [START recommender_v1_generated_Recommender_UpdateRecommenderConfig_sync]
+import com.google.cloud.recommender.v1.RecommenderClient;
+import com.google.cloud.recommender.v1.RecommenderConfig;
+import com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest;
+import com.google.protobuf.FieldMask;
 
-public class SyncGetInsight {
+public class SyncUpdateRecommenderConfig {
 
   public static void main(String[] args) throws Exception {
-    syncGetInsight();
+    syncUpdateRecommenderConfig();
   }
 
-  public static void syncGetInsight() throws Exception {
+  public static void syncUpdateRecommenderConfig() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    RecommenderStubSettings.Builder recommenderSettingsBuilder =
-        RecommenderStubSettings.newBuilder();
-    recommenderSettingsBuilder
-        .getInsightSettings()
-        .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    RecommenderStubSettings recommenderSettings = recommenderSettingsBuilder.build();
+    try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+      UpdateRecommenderConfigRequest request =
+          UpdateRecommenderConfigRequest.newBuilder()
+              .setRecommenderConfig(RecommenderConfig.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      RecommenderConfig response = recommenderClient.updateRecommenderConfig(request);
+    }
   }
 }
-// [END recommender_v1_generated_RecommenderStubSettings_GetInsight_sync]
+// [END recommender_v1_generated_Recommender_UpdateRecommenderConfig_sync]
