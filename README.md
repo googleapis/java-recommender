@@ -63,13 +63,13 @@ implementation 'com.google.cloud:google-cloud-recommender'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-recommender:2.7.0'
+implementation 'com.google.cloud:google-cloud-recommender:2.8.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "2.7.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "2.8.0"
 ```
 
 ## Authentication
